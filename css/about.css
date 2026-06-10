@@ -1,0 +1,85 @@
+/* ============================================================
+   ABOUT.CSS — #about section
+   ============================================================ */
+
+#about {
+  background: var(--bg2);
+}
+
+/* Two-column layout: bio left, skills right */
+.about-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* Bio text column */
+.about-bio p {
+  font-size: 0.98rem;
+  color: var(--text);
+  line-height: 1.95;
+  margin-bottom: 18px;
+}
+
+.about-bio p:last-child { margin-bottom: 0; }
+
+/* Skills two-column sub-grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+/* Each skill group (dev / security) */
+.skill-group h3 {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid var(--border);
+}
+
+/* Pill tag container */
+.skill-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+/* Shared .tag style — also used in project cards */
+.tag {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  padding: 5px 11px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--text);
+  background: var(--surface);
+  white-space: nowrap;
+  transition: border-color var(--ease), color var(--ease), box-shadow var(--ease);
+}
+
+.tag:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+  box-shadow: 0 0 10px rgba(0, 245, 196, 0.12);
+}
+
+/* ── Responsive ── */
+@media (max-width: 920px) {
+  .about-content {
+    grid-template-columns: 1fr;
+    gap: 44px;
+  }
+}
+
+@media (max-width: 520px) {
+  .skills-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}

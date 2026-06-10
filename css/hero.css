@@ -1,0 +1,124 @@
+/* ============================================================
+   HERO.CSS — #home section
+   ============================================================ */
+
+#home {
+  position: relative;
+  min-height: 100vh;
+  padding-top: var(--nav-height);
+  overflow: hidden;
+}
+
+/* CSS grid-line background */
+#home::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 245, 196, 0.035) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 245, 196, 0.035) 1px, transparent 1px);
+  background-size: 64px 64px;
+  pointer-events: none;
+}
+
+/* Radial vignette so grid fades into bg */
+#home::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(
+    ellipse at 65% 45%,
+    transparent 25%,
+    rgba(8, 11, 16, 0.65) 60%,
+    var(--bg) 85%
+  );
+  pointer-events: none;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 660px;
+}
+
+/* "// hello world" greeting line */
+.hero-greeting {
+  font-family: var(--font-mono);
+  font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+  color: var(--accent);
+  letter-spacing: 0.18em;
+  margin-bottom: 18px;
+  opacity: 0.85;
+}
+
+/* Main name heading */
+.hero-name {
+  font-family: var(--font-body);
+  font-size: clamp(2.8rem, 8.5vw, 5.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  color: var(--text);
+  margin-bottom: 14px;
+}
+
+/* Name highlighted in accent */
+.hero-name span {
+  color: var(--accent);
+}
+
+/* Typewriter line */
+.hero-typewriter {
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 3vw, 1.55rem);
+  color: var(--text);
+  margin-bottom: 26px;
+  min-height: 2.2em;
+  display: flex;
+  align-items: center;
+  gap: 2px;
+}
+
+/* Cycling text rendered by typewriter.js */
+.typewriter-text {
+  color: var(--accent2);
+}
+
+/* Blinking caret */
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.15em;
+  background: var(--accent);
+  vertical-align: middle;
+  margin-left: 1px;
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* One-liner bio */
+.hero-bio {
+  font-size: clamp(0.9rem, 1.8vw, 1.02rem);
+  color: var(--muted);
+  line-height: 1.85;
+  margin-bottom: 42px;
+  max-width: 500px;
+}
+
+/* CTA button row */
+.hero-cta {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero-cta {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- ↓ Edit meta description for SEO -->
+  <meta name="description" content="Aman Pathania — Developer & Cybersecurity Professional" />
+  <title>Aman Pathania</title>
+
+  <!-- Google Fonts: Share Tech Mono (mono/accents) + Syne (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Global styles first, then section overrides -->
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/about.css" />
+  <link rel="stylesheet" href="css/experience.css" />
+  <link rel="stylesheet" href="css/projects.css" />
+  <link rel="stylesheet" href="css/contact.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       NAV
+  ═══════════════════════════════════════════════════════════ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <!-- ↓ Edit logo text if you want something other than "AP" -->
+      <a href="#home" class="nav-logo">AP</a>
+
+      <ul class="nav-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile full-screen overlay -->
+  <div class="nav-overlay" id="navOverlay" role="dialog" aria-modal="true" aria-label="Navigation menu">
+    <button class="overlay-close" id="overlayClose" aria-label="Close menu">✕</button>
+    <ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       HERO  #home
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="home" aria-label="Introduction">
+    <div class="container">
+      <div class="hero-content reveal">
+
+        <!-- ↓ Edit greeting line -->
+        <p class="hero-greeting">Portfolio</p>
+
+        <!-- ↓ Edit your name -->
+        <h1 class="hero-name">Hi, i'm <span>Aman.</span></h1>
+
+        <!-- Typewriter — phrases edited in js/typewriter.js -->
+        <p class="hero-typewriter" aria-label="I am a Developer, Security Researcher, Security Analyst, and Builder.">
+          <span class="typewriter-text" id="typewriter" aria-hidden="true"></span>
+          <span class="cursor" aria-hidden="true"></span>
+        </p>
+
+        <!-- ↓ Edit your one-liner bio -->
+        <p class="hero-bio">
+          I build things for the web and break things for security. Passionate about
+          clean code, low-level systems, and the art of finding what shouldn't be found.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn btn-primary">view my work</a>
+          <a href="mailto:amaanpathania404@gmail.com" class="btn btn-outline">Say hi!</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ABOUT  #about
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="about" aria-label="About me">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <h2>/ about</h2>
+      </div>
+
+      <div class="about-content">
+
+        <!-- ↓ Edit your bio paragraphs here -->
+        <div class="about-bio reveal">
+          <p>
+            I am a cybersecurity-focused IT student with hands-on experience in full-stack
+            development and secure system design. I enjoy building scalable applications
+            with a strong emphasis on security and clean architecture.
+          </p>
+          <p>
+            I have worked on developing backend systems, designing PostgreSQL databases,
+            and building REST APIs with secure authentication using JWT and role-based
+            access control across multi-user platforms.
+          </p>
+          <p>
+            I am passionate about cybersecurity, backend engineering, and infrastructure,
+            with a goal to build secure, reliable systems and grow into a professional
+            security-focused role.
+          </p>
+        </div>
+
+        <!-- Skills columns — edit tags as needed -->
+        <div class="skills-grid reveal-stagger">
+
+          <div class="skill-group">
+            <h3>dev stack</h3>
+            <!-- ↓ Edit dev skills -->
+            <div class="skill-tags">
+              <span class="tag">Python</span>
+              <span class="tag">JavaScript</span>
+              <span class="tag">Django</span>
+              <span class="tag">DRF</span>
+              <span class="tag">REST APIs</span>
+              <span class="tag">PostgreSQL</span>
+              <span class="tag">Docker</span>
+              <span class="tag">Git</span>
+              <span class="tag">GitHub Actions</span>
+              <span class="tag">Linux</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">OpenAPI</span>
+              <span class="tag">JWT</span>
+              <span class="tag">RBAC</span>
+              <span class="tag">System Design</span>
+              <span class="tag">MVC</span>
+              <span class="tag">CI/CD</span>
+            </div>
+          </div>
+
+          <div class="skill-group">
+            <h3>security stack</h3>
+            <!-- ↓ Edit security skills -->
+            <div class="skill-tags">
+              <span class="tag">Web Security</span>
+              <span class="tag">OWASP Top 10</span>
+              <span class="tag">Burp Suite</span>
+              <span class="tag">Nmap</span>
+              <span class="tag">Wireshark</span>
+              <span class="tag">Metasploit</span>
+              <span class="tag">Kali Linux</span>
+              <span class="tag">Vulnerability Assessment</span>
+              <span class="tag">Penetration Testing</span>
+              <span class="tag">Network Security</span>
+              <span class="tag">Secure Coding</span>
+              <span class="tag">JWT Security</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       EXPERIENCE  #experience
+       To add a new entry:
+         1. Add a <button class="exp-tab" data-tab="exp-N">Name</button>
+         2. Add a <div class="exp-panel" id="exp-N"> ... </div>
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="experience" aria-label="Work experience">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <h2>/ experience</h2>
+      </div>
+
+      <div class="exp-layout reveal">
+
+        <!-- Tab list (left column) -->
+        <div class="exp-tabs" role="tablist" aria-label="Companies">
+          <!-- ↓ Edit company names here -->
+          <button class="exp-tab active" data-tab="exp-1" role="tab" aria-selected="true"  aria-controls="exp-1">DNS Council (Internship)</button>
+          <!--
+          Add more tabs:
+          <button class="exp-tab" data-tab="exp-3" role="tab" aria-selected="false" aria-controls="exp-3">Company Three</button>
+          -->
+        </div>
+
+        <!-- Panels (right column) -->
+        <div class="exp-panels">
+
+          <!-- ↓ Entry 1 — edit role, company, dates, bullets -->
+          <div class="exp-panel active" id="exp-1" role="tabpanel" aria-labelledby="tab-1">
+            <p class="exp-role">Full-Stack Developer/ <span>@ DNS Council</span></p>
+            <p class="exp-date">April 2026 — Present</p>
+            <ul class="exp-bullets">
+              <li>Backend & Database: Designed the full PostgreSQL database schema,implimented JWT authentications and Role-Base Access Control(RBAC) across four usar portals and build REST-API endpoint documentedvia Open API specifications as a shreaded control for the development team.</li>
+              <li>Employer and Admin Portal: Build the complete employer portal including internship listning management, candidate pipeline tracking, project proposal submission with university verification workflow, and document upload system. Developea a full admin control center with user management, secure token based invitations, activity logging and platform settings management. </li>
+              <li>Full-Stack Integration & problem solving: Integrated multiple independently developed django apps into a unified platform, managing database migrations ,resolving cross portal conflicts, and ensuring condidtant data flow across all four user portals throughout the full development lifecycle.</li>
+            </ul>
+            <div class="exp-tech">
+              <p class="exp-tech-label">Technologies used:</p>
+              <ul class="exp-tech-tags">
+                <li>Python</li>
+                <li>JavaScript</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>Django</li>
+                <li>Django REST Framework</li>
+                <li>Chart.js</li>
+                <li>PostgreSQL</li>
+                <li>SQLite</li>
+                <li>Django ORM</li>
+                <li>Redis</li>
+                <li>JWT Authentication</li>
+                <li>RBAC</li>
+                <li>CSRF Protection</li>
+                <li>Python secrets module</li>
+                <li>Docker</li>
+                <li>Git</li>
+                <li>GitHub</li>
+                <li>GitLab</li>
+                <li>GitHub Actions</li>
+                <li>VS Code</li>
+                <li>Virtual Environment (venv)</li>
+                <li>REST API</li>
+                <li>OpenAPI/Swagger</li>
+                <li>3NF Database Design</li>
+                <li>Git Flow</li>
+                <li>WCAG 2.1</li>
+              </ul>
+            </div>
+          </div>
+
+          <!--
+          Entry template — copy and uncomment to add more:
+          <div class="exp-panel" id="exp-3" role="tabpanel">
+            <p class="exp-role">Role Title <span>@ Company Three</span></p>
+            <p class="exp-date">MMM YYYY — MMM YYYY</p>
+            <ul class="exp-bullets">
+              <li>Bullet one.</li>
+              <li>Bullet two.</li>
+              <li>Bullet three.</li>
+            </ul>
+          </div>
+          -->
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       PROJECTS  #projects
+       Each card needs: data-category="dev" | "security" | "ctf"
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="projects" aria-label="Projects">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <h2>/ projects</h2>
+      </div>
+
+      <!-- Filter buttons -->
+      <div class="filter-bar reveal" role="group" aria-label="Filter projects">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="dev">Dev</button>
+        <button class="filter-btn" data-filter="security">Security</button>
+        <button class="filter-btn" data-filter="ctf">CTF</button>
+      </div>
+
+      <!-- Card grid -->
+      <div class="projects-grid">
+
+        <!-- ─────────────────────────────────────────────────────
+             DEV PROJECT 1
+             ↓ Edit: title, desc, tags, href values
+        ───────────────────────────────────────────────────── -->
+        <article class="project-card reveal" data-category="dev">
+          <div class="card-header">
+            <!-- Code icon -->
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <div class="card-links">
+              <!-- ↓ Replace # with actual GitHub URL -->
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+              </a>
+              <!-- ↓ Remove this anchor if there's no live demo -->
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View live demo">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none"
+                     stroke="currentColor" stroke-width="2" aria-hidden="true">
+                  <path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/>
+                  <polyline points="15 3 21 3 21 9"/>
+                  <line x1="10" y1="14" x2="21" y2="3"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- ↓ Edit project name -->
+          <h3 class="card-title">Project Alpha</h3>
+          <!-- ↓ Edit description (1-2 lines) -->
+          <p class="card-desc">
+            A full-stack web application that solves a real problem with clean architecture
+            and a focus on performance.
+          </p>
+          <div class="card-footer">
+            <!-- ↓ Edit stack tags -->
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">React</span>
+              <span class="tag">PostgreSQL</span>
+            </div>
+            <span class="card-category cat-dev">dev</span>
+          </div>
+        </article>
+
+
+        <!-- ─────────────────────────────────────────────────────
+             DEV PROJECT 2
+        ───────────────────────────────────────────────────── -->
+        <article class="project-card reveal" data-category="dev">
+          <div class="card-header">
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Project Beta</h3>
+          <p class="card-desc">
+            A CLI tool that automates a tedious workflow. Written in Python with a focus
+            on simplicity and developer ergonomics.
+          </p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">CLI</span>
+              <span class="tag">Bash</span>
+            </div>
+            <span class="card-category cat-dev">dev</span>
+          </div>
+        </article>
+
+
+        <!-- ─────────────────────────────────────────────────────
+             SECURITY PROJECT 1
+        ───────────────────────────────────────────────────── -->
+        <article class="project-card reveal" data-category="security">
+          <div class="card-header">
+            <!-- Shield icon -->
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Recon Tool Gamma</h3>
+          <p class="card-desc">
+            Custom reconnaissance automation tool that chains passive and active enumeration
+            steps for authorised penetration testing engagements.
+          </p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Nmap</span>
+              <span class="tag">OSINT</span>
+            </div>
+            <span class="card-category cat-security">security</span>
+          </div>
+        </article>
+
+
+        <!-- ─────────────────────────────────────────────────────
+             SECURITY PROJECT 2
+        ───────────────────────────────────────────────────── -->
+        <article class="project-card reveal" data-category="security">
+          <div class="card-header">
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View source on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Web Vuln Scanner Delta</h3>
+          <p class="card-desc">
+            Automated scanner for common OWASP Top-10 vulnerabilities. Outputs structured
+            reports in JSON and HTML for triage workflows.
+          </p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Burp API</span>
+              <span class="tag">OWASP</span>
+            </div>
+            <span class="card-category cat-security">security</span>
+          </div>
+        </article>
+
+
+        <!-- ─────────────────────────────────────────────────────
+             CTF PROJECT 1
+        ───────────────────────────────────────────────────── -->
+        <article class="project-card reveal" data-category="ctf">
+          <div class="card-header">
+            <!-- Lock / flag icon -->
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+            <div class="card-links">
+              <a href="#" target="_blank" rel="noopener noreferrer" aria-label="View writeups on GitHub">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">CTF Writeup Collection</h3>
+          <p class="card-desc">
+            Detailed technical writeups for HackTheBox and TryHackMe challenges spanning
+            web exploitation, reversing, pwn, and forensics.
+          </p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Web</span>
+              <span class="tag">Reversing</span>
+              <span class="tag">Pwn</span>
+              <span class="tag">Forensics</span>
+            </div>
+            <span class="card-category cat-ctf">ctf</span>
+          </div>
+        </article>
+
+        <!--
+        Card template — copy this block and change data-category / content:
+
+        <article class="project-card reveal" data-category="dev">
+          <div class="card-header">
+            <svg class="card-icon" width="20" height="20" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.5">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+            <div class="card-links">
+              <a href="YOUR_GITHUB_URL" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                GitHub SVG icon here
+              </a>
+            </div>
+          </div>
+          <h3 class="card-title">Project Name</h3>
+          <p class="card-desc">Short description.</p>
+          <div class="card-footer">
+            <div class="card-tags">
+              <span class="tag">Stack</span>
+            </div>
+            <span class="card-category cat-dev">dev</span>
+          </div>
+        </article>
+        -->
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+       CONTACT  #contact
+  ═══════════════════════════════════════════════════════════ -->
+  <section id="contact" aria-label="Contact">
+    <div class="container">
+
+      <div class="section-heading reveal">
+        <h2>/ contact</h2>
+      </div>
+
+      <div class="contact-inner reveal">
+
+        <!-- ↓ Edit intro copy -->
+        <p class="contact-copy">
+          I'm currently open to new opportunities — whether a full-time role, freelance
+          project, or just a good conversation about security or software. My inbox is
+          always open.
+        </p>
+
+        <!-- ↓ Replace with your actual email address -->
+        <a href="mailto:amaanpathania404@gmail.com" class="contact-email">say hello →</a>
+
+        <!-- ↓ Replace href values with your actual profile URLs -->
+        <div class="social-row">
+
+          <a href="https://github.com/gadznikov"
+             target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="GitHub profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.167 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.604-3.369-1.34-3.369-1.34-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0112 6.836c.85.004 1.705.115 2.504.337 1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.578.688.48C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+          </a>
+
+          <a href="https://linkedin.com/in/aman-pathania-545944270"
+             target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="LinkedIn profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+
+          <!-- ↓ Remove this anchor if you don't use Twitter/X -->
+          <a href="https://twitter.com/gadznikov"
+             target="_blank" rel="noopener noreferrer"
+             class="social-link" aria-label="Twitter / X profile">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.73-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+
+        </div>
+
+        <footer>
+          <!-- ↓ Edit year or name -->
+          <p>built by aman pathania &middot; 2025</p>
+        </footer>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Scripts (order matters: typewriter + filter before main) -->
+  <script src="js/typewriter.js"></script>
+  <script src="js/filter.js"></script>
+  <script src="js/scroll.js"></script>
+  <script src="main.js"></script>
+
+</body>
+</html>

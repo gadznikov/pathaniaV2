@@ -1,0 +1,185 @@
+/* ============================================================
+   PROJECTS.CSS — #projects section
+   ============================================================ */
+
+#projects {
+  background: var(--bg2);
+}
+
+/* ── Filter bar ── */
+.filter-bar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.filter-btn {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.1em;
+  padding: 7px 18px;
+  border: 1px solid var(--border);
+  border-radius: 3px;
+  color: var(--muted);
+  background: var(--surface);
+  transition: color var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease);
+}
+
+.filter-btn:hover {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.filter-btn.active {
+  background: var(--accent);
+  color: var(--bg);
+  border-color: var(--accent);
+  font-weight: 700;
+}
+
+/* ── Card grid ── */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 22px;
+}
+
+/* ── Individual card ── */
+.project-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 28px 26px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: relative;
+  overflow: hidden;
+  transition:
+    transform var(--ease),
+    border-color var(--ease),
+    box-shadow var(--ease),
+    opacity 0.35s ease;
+}
+
+/* Top gradient bar that slides in on hover */
+.project-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, var(--accent), var(--accent2));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform var(--ease);
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(0, 245, 196, 0.32);
+  box-shadow: 0 10px 32px rgba(0, 245, 196, 0.09);
+}
+
+.project-card:hover::before {
+  transform: scaleX(1);
+}
+
+/* Card header: icon + links row */
+.card-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+/* Folder / shield icon */
+.card-icon { color: var(--accent); flex-shrink: 0; }
+
+/* GitHub + external link row */
+.card-links {
+  display: flex;
+  gap: 14px;
+  align-items: center;
+}
+
+.card-links a {
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  transition: color var(--ease), transform var(--ease);
+}
+
+.card-links a:hover {
+  color: var(--accent);
+  transform: translateY(-1px);
+}
+
+/* Project title */
+.card-title {
+  font-family: var(--font-body);
+  font-size: 1.02rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+/* Short description */
+.card-desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.68;
+  flex: 1;
+}
+
+/* Footer: stack tags + category badge */
+.card-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 6px;
+}
+
+/* Reuses .tag from about.css */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.card-tags .tag {
+  font-size: 0.68rem;
+  padding: 3px 9px;
+}
+
+/* Category badge colours */
+.card-category {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 3px 9px;
+  border-radius: 2px;
+  flex-shrink: 0;
+  /* default = dev (blue) */
+  color: var(--accent2);
+  border: 1px solid rgba(0, 170, 255, 0.28);
+}
+
+.card-category.cat-security {
+  color: #ff6b6b;
+  border-color: rgba(255, 107, 107, 0.28);
+}
+
+.card-category.cat-ctf {
+  color: #ffd93d;
+  border-color: rgba(255, 217, 61, 0.28);
+}
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .projects-grid { grid-template-columns: 1fr; }
+}
