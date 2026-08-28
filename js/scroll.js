@@ -43,6 +43,11 @@
 
   if (!revealTargets.length) return;
 
+  /* Home dashboard is above the fold — show immediately */
+  document.querySelectorAll('#home .reveal, #home .reveal-stagger').forEach((el) => {
+    el.classList.add('visible');
+  });
+
   const observer = new IntersectionObserver(
     (entries) => {
       entries.forEach((entry) => {

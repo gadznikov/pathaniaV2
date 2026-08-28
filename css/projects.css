@@ -6,7 +6,6 @@
   background: var(--bg2);
 }
 
-/* ── Filter bar ── */
 .filter-bar {
   display: flex;
   gap: 10px;
@@ -20,9 +19,9 @@
   letter-spacing: 0.1em;
   padding: 7px 18px;
   border: 1px solid var(--border);
-  border-radius: 3px;
+  border-radius: 999px;
   color: var(--muted);
-  background: var(--surface);
+  background: transparent;
   transition: color var(--ease), border-color var(--ease), background var(--ease), box-shadow var(--ease);
 }
 
@@ -32,24 +31,22 @@
 }
 
 .filter-btn.active {
-  background: var(--accent);
-  color: var(--bg);
+  background: transparent;
+  color: var(--accent);
   border-color: var(--accent);
-  font-weight: 700;
+  box-shadow: 0 0 14px rgba(255, 42, 58, 0.28);
 }
 
-/* ── Card grid ── */
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 22px;
 }
 
-/* ── Individual card ── */
 .project-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   padding: 28px 26px;
   display: flex;
   flex-direction: column;
@@ -63,7 +60,6 @@
     opacity 0.35s ease;
 }
 
-/* Top gradient bar that slides in on hover */
 .project-card::before {
   content: '';
   position: absolute;
@@ -79,15 +75,14 @@
 
 .project-card:hover {
   transform: translateY(-5px);
-  border-color: rgba(0, 245, 196, 0.32);
-  box-shadow: 0 10px 32px rgba(0, 245, 196, 0.09);
+  border-color: rgba(255, 42, 58, 0.45);
+  box-shadow: 0 10px 32px rgba(255, 42, 58, 0.14);
 }
 
 .project-card:hover::before {
   transform: scaleX(1);
 }
 
-/* Card header: icon + links row */
 .card-header {
   display: flex;
   align-items: flex-start;
@@ -95,10 +90,8 @@
   gap: 10px;
 }
 
-/* Folder / shield icon */
 .card-icon { color: var(--accent); flex-shrink: 0; }
 
-/* GitHub + external link row */
 .card-links {
   display: flex;
   gap: 14px;
@@ -117,15 +110,18 @@
   transform: translateY(-1px);
 }
 
-/* Project title */
 .card-title {
-  font-family: var(--font-body);
-  font-size: 1.02rem;
-  font-weight: 600;
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  line-height: 1.7;
+  font-weight: 400;
   color: var(--text);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
 }
 
-/* Short description */
 .card-desc {
   font-size: 0.88rem;
   color: var(--muted);
@@ -133,7 +129,6 @@
   flex: 1;
 }
 
-/* Footer: stack tags + category badge */
 .card-footer {
   display: flex;
   align-items: center;
@@ -143,7 +138,6 @@
   margin-top: 6px;
 }
 
-/* Reuses .tag from about.css */
 .card-tags {
   display: flex;
   flex-wrap: wrap;
@@ -155,7 +149,11 @@
   padding: 3px 9px;
 }
 
-/* Category badge colours */
+.card-tags .tag::before {
+  content: '+ ';
+  color: var(--accent);
+}
+
 .card-category {
   font-family: var(--font-mono);
   font-size: 0.65rem;
@@ -164,22 +162,38 @@
   padding: 3px 9px;
   border-radius: 2px;
   flex-shrink: 0;
-  /* default = dev (blue) */
-  color: var(--accent2);
-  border: 1px solid rgba(0, 170, 255, 0.28);
+  color: var(--data);
+  border: 1px solid rgba(196, 200, 208, 0.28);
 }
 
 .card-category.cat-security {
-  color: #ff6b6b;
-  border-color: rgba(255, 107, 107, 0.28);
+  color: var(--accent);
+  border-color: rgba(255, 42, 58, 0.35);
 }
 
 .card-category.cat-ctf {
-  color: #ffd93d;
-  border-color: rgba(255, 217, 61, 0.28);
+  color: var(--accent2);
+  border-color: rgba(255, 107, 53, 0.35);
 }
 
-/* ── Mobile ── */
+.card-badge {
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  border: 1px solid rgba(255, 107, 53, 0.45);
+  color: var(--accent2);
+  background: rgba(255, 107, 53, 0.1);
+}
+
+.card-header-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 @media (max-width: 768px) {
   .projects-grid { grid-template-columns: 1fr; }
 }
