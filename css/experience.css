@@ -1,22 +1,21 @@
 /* ============================================================
-   EXPERIENCE.CSS — #experience section (tab + panel layout)
+   EXPERIENCE.CSS — glowing dossier
    ============================================================ */
 
 #experience {
   background: var(--bg);
 }
 
-/* Outer wrapper: tab list on left, content on right */
 .exp-layout {
   display: grid;
-  grid-template-columns: 200px 1fr;
+  grid-template-columns: 220px 1fr;
   border: 1px solid var(--border);
-  border-radius: 6px;
+  border-radius: 12px;
   overflow: hidden;
   background: var(--surface);
+  box-shadow: 0 0 0 1px rgba(255, 107, 53, 0.08), 0 12px 36px rgba(255, 42, 58, 0.1);
 }
 
-/* ── Tab list ── */
 .exp-tabs {
   border-right: 1px solid var(--border);
   display: flex;
@@ -41,16 +40,15 @@
 
 .exp-tab:hover {
   color: var(--accent);
-  background: rgba(0, 245, 196, 0.03);
+  background: rgba(255, 42, 58, 0.04);
 }
 
 .exp-tab.active {
   color: var(--accent);
   border-left-color: var(--accent);
-  background: rgba(0, 245, 196, 0.05);
+  background: rgba(255, 42, 58, 0.07);
 }
 
-/* ── Panel area ── */
 .exp-panels {
   padding: 36px 40px;
 }
@@ -58,27 +56,38 @@
 .exp-panel       { display: none; }
 .exp-panel.active { display: block; }
 
-/* Role + company */
 .exp-role {
-  font-family: var(--font-body);
-  font-size: 1.12rem;
-  font-weight: 600;
+  font-family: var(--font-pixel);
+  font-size: 0.72rem;
+  line-height: 1.7;
   color: var(--text);
-  margin-bottom: 5px;
+  margin-bottom: 14px;
 }
 
 .exp-role span { color: var(--accent); }
 
-/* Date range */
-.exp-date {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--muted);
-  letter-spacing: 0.1em;
+.exp-issued {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 26px;
 }
 
-/* Bullet list */
+.exp-issued-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent2);
+}
+
+.exp-date {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--data);
+  letter-spacing: 0.08em;
+}
+
 .exp-bullets {
   display: flex;
   flex-direction: column;
@@ -102,7 +111,6 @@
   font-size: 0.85rem;
 }
 
-/* Technologies used */
 .exp-tech {
   margin-top: 26px;
   padding-top: 20px;
@@ -131,13 +139,16 @@
   font-family: var(--font-mono);
   font-size: 0.72rem;
   color: var(--accent);
-  background: rgba(0, 245, 196, 0.07);
-  border: 1px solid rgba(0, 245, 196, 0.2);
+  background: rgba(255, 42, 58, 0.07);
+  border: 1px solid rgba(255, 42, 58, 0.28);
   border-radius: 4px;
   padding: 3px 9px;
 }
 
-/* ── Mobile: tabs become a horizontal scrollable row ── */
+.exp-tech-tags li::before {
+  content: '+ ';
+}
+
 @media (max-width: 700px) {
   .exp-layout {
     grid-template-columns: 1fr;

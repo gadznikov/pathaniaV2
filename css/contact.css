@@ -4,7 +4,7 @@
 
 #contact {
   background: var(--bg);
-  min-height: unset;       /* Contact doesn't need to fill full viewport */
+  min-height: unset;
   padding-bottom: 50px;
 }
 
@@ -12,7 +12,6 @@
   max-width: 560px;
 }
 
-/* Intro copy */
 .contact-copy {
   font-size: 0.97rem;
   color: var(--muted);
@@ -20,7 +19,6 @@
   margin-bottom: 36px;
 }
 
-/* Big mailto button */
 .contact-email {
   display: inline-block;
   font-family: var(--font-mono);
@@ -36,12 +34,11 @@
 }
 
 .contact-email:hover {
-  background: rgba(0, 245, 196, 0.07);
+  background: rgba(255, 42, 58, 0.08);
   box-shadow: var(--glow);
   transform: translateY(-2px);
 }
 
-/* Social icon row */
 .social-row {
   display: flex;
   align-items: center;
@@ -66,16 +63,25 @@
   transform: translateY(-3px);
 }
 
-/* ── Footer ── */
 footer {
   border-top: 1px solid var(--border);
   padding-top: 26px;
 }
 
-footer p {
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+}
+
+.footer-links a {
   font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--muted);
+  font-size: 0.78rem;
+  color: var(--data);
   letter-spacing: 0.08em;
-  text-align: center;
+  transition: color var(--ease);
+}
+
+.footer-links a:hover {
+  color: var(--accent);
 }

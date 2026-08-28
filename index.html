@@ -7,10 +7,10 @@
   <meta name="description" content="Aman Pathania — Developer & Cybersecurity Professional" />
   <title>Aman Pathania</title>
 
-  <!-- Google Fonts: Share Tech Mono (mono/accents) + Syne (body) -->
+  <!-- Pixel + gothic lockup + mono/nav + body -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=UnifrakturCook:wght@700&family=Share+Tech+Mono&family=Syne:wght@400;500;600;700&display=swap" rel="stylesheet" />
 
   <!-- Global styles first, then section overrides -->
   <link rel="stylesheet" href="style.css" />
@@ -63,22 +63,23 @@
        HERO  #home
   ═══════════════════════════════════════════════════════════ -->
   <section id="home" aria-label="Introduction">
-    <div class="container">
+    <aside class="hero-rail" aria-hidden="true">
+      <img src="img/hero-rail.png" alt="" />
+    </aside>
+
+    <div class="hero-main">
       <div class="hero-content reveal">
 
-        <!-- ↓ Edit greeting line -->
-        <p class="hero-greeting">Portfolio</p>
+        <p class="hero-welcome">Welcome to my page</p>
+        <p class="hero-lockup">AP</p>
 
-        <!-- ↓ Edit your name -->
         <h1 class="hero-name">Hi, i'm <span>Aman.</span></h1>
 
-        <!-- Typewriter — phrases edited in js/typewriter.js -->
         <p class="hero-typewriter" aria-label="I am a Developer, Security Researcher, Security Analyst, and Builder.">
           <span class="typewriter-text" id="typewriter" aria-hidden="true"></span>
           <span class="cursor" aria-hidden="true"></span>
         </p>
 
-        <!-- ↓ Edit your one-liner bio -->
         <p class="hero-bio">
           I build things for the web and break things for security. Passionate about
           clean code, low-level systems, and the art of finding what shouldn't be found.
@@ -87,6 +88,33 @@
         <div class="hero-cta">
           <a href="#projects" class="btn btn-primary">view my work</a>
           <a href="mailto:amaanpathania404@gmail.com" class="btn btn-outline">Say hi!</a>
+        </div>
+
+        <article class="ops-card glow-card">
+          <p class="ops-card-label">Current ops</p>
+          <h2 class="ops-card-title">Full-Stack Developer @ DNS Council</h2>
+          <p class="ops-card-meta"><span>ISSUED</span> April 2026 — Present</p>
+          <ul class="ops-list">
+            <li>PostgreSQL schema + JWT / RBAC across four user portals</li>
+            <li>Employer portal: listings, candidate pipeline, document uploads</li>
+            <li>Admin control center: users, invitations, activity logs</li>
+          </ul>
+        </article>
+
+        <div class="stack-strip" aria-label="Focus areas">
+          <span>Backend &amp; APIs</span>
+          <span>Security</span>
+          <span>Infrastructure</span>
+        </div>
+
+        <div class="terminal" aria-label="whoami">
+          <div class="terminal-bar" aria-hidden="true"><i></i><i></i><i></i></div>
+          <p class="terminal-prompt">gadznikov@pathania <span>&gt; whoami</span></p>
+          <p class="terminal-out">
+            I am a cybersecurity-focused IT student with hands-on experience in full-stack
+            development and secure system design. I enjoy building scalable applications
+            with a strong emphasis on security and clean architecture.
+          </p>
         </div>
 
       </div>
@@ -103,6 +131,11 @@
       <div class="section-heading reveal">
         <h2>/ about</h2>
       </div>
+
+      <div class="about-shell">
+        <div class="about-rail" aria-hidden="true">
+          <img src="img/hero-rail.png" alt="" />
+        </div>
 
       <div class="about-content">
 
@@ -173,6 +206,11 @@
 
         </div>
       </div>
+
+        <div class="about-rail" aria-hidden="true">
+          <img src="img/hero-rail.png" alt="" />
+        </div>
+      </div>
     </div>
   </section>
 
@@ -208,7 +246,10 @@
           <!-- ↓ Entry 1 — edit role, company, dates, bullets -->
           <div class="exp-panel active" id="exp-1" role="tabpanel" aria-labelledby="tab-1">
             <p class="exp-role">Full-Stack Developer/ <span>@ DNS Council</span></p>
-            <p class="exp-date">April 2026 — Present</p>
+            <div class="exp-issued">
+              <span class="exp-issued-label">ISSUED</span>
+              <p class="exp-date">April 2026 — Present</p>
+            </div>
             <ul class="exp-bullets">
               <li>Designed the full PostgreSQL schema, implemented JWT authentication and Role-Based Access Control (RBAC) across four user portals, and built REST API endpoints documented via OpenAPI/Swagger specifications.</li>
               <li> Built the employer portal with internship listing management, candidate pipeline tracking, and document uploads. Developed an admin control center covering user management, token-based invitations, activity logging, and platform settings.</li>
@@ -351,7 +392,7 @@
               </a>
             </div>
           </div>
-          <h3 class="card-title">Project Beta</h3>
+          <h3 class="card-title">Project Beta <span class="card-badge">sample</span></h3>
           <p class="card-desc">
             A CLI tool that automates a tedious workflow. Written in Python with a focus
             on simplicity and developer ergonomics.
@@ -385,7 +426,7 @@
               </a>
             </div>
           </div>
-          <h3 class="card-title">Recon Tool Gamma</h3>
+          <h3 class="card-title">Recon Tool Gamma <span class="card-badge">sample</span></h3>
           <p class="card-desc">
             Custom reconnaissance automation tool that chains passive and active enumeration
             steps for authorised penetration testing engagements.
@@ -418,7 +459,7 @@
               </a>
             </div>
           </div>
-          <h3 class="card-title">Web Vuln Scanner Delta</h3>
+          <h3 class="card-title">Web Vuln Scanner Delta <span class="card-badge">sample</span></h3>
           <p class="card-desc">
             Automated scanner for common OWASP Top-10 vulnerabilities. Outputs structured
             reports in JSON and HTML for triage workflows.
@@ -453,7 +494,7 @@
               </a>
             </div>
           </div>
-          <h3 class="card-title">CTF Writeup Collection</h3>
+          <h3 class="card-title">CTF Writeup Collection <span class="card-badge">sample</span></h3>
           <p class="card-desc">
             Detailed technical writeups for HackTheBox and TryHackMe challenges spanning
             web exploitation, reversing, pwn, and forensics.
@@ -553,8 +594,11 @@
         </div>
 
         <footer>
-          <!-- ↓ Edit year or name -->
-          <p>built by aman pathania &middot; 2025</p>
+          <div class="footer-links">
+            <a href="https://github.com/gadznikov" target="_blank" rel="noopener noreferrer">GitHub</a>
+            <a href="https://linkedin.com/in/aman-pathania-545944270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://twitter.com/gadznikov" target="_blank" rel="noopener noreferrer">Twitter</a>
+          </div>
         </footer>
 
       </div>

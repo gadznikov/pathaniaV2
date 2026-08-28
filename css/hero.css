@@ -1,89 +1,118 @@
 /* ============================================================
-   HERO.CSS — #home section
+   HERO.CSS — #home dashboard
    ============================================================ */
 
 #home {
   position: relative;
   min-height: 100vh;
-  padding-top: var(--nav-height);
+  padding: 0;
+  display: grid;
+  grid-template-columns: minmax(260px, 38%) 1fr;
   overflow: hidden;
 }
 
-/* CSS grid-line background */
-#home::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(rgba(0, 245, 196, 0.035) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(0, 245, 196, 0.035) 1px, transparent 1px);
-  background-size: 64px 64px;
-  pointer-events: none;
+/* Left abstract rail */
+.hero-rail {
+  position: relative;
+  min-height: 100%;
+  align-self: stretch;
+  overflow: hidden;
+  border-right: 1px solid var(--border);
 }
 
-/* Radial vignette so grid fades into bg */
-#home::after {
+.hero-rail img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center bottom;
+  display: block;
+  filter: saturate(1.15) contrast(1.08);
+}
+
+.hero-rail::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: radial-gradient(
-    ellipse at 65% 45%,
-    transparent 25%,
-    rgba(8, 11, 16, 0.65) 60%,
-    var(--bg) 85%
-  );
   pointer-events: none;
+  background:
+    linear-gradient(180deg, rgba(10, 10, 12, 0.72) 0%, rgba(10, 10, 12, 0.15) 28%, transparent 42%, transparent 72%, rgba(10, 10, 12, 0.55) 100%),
+    linear-gradient(90deg, transparent 55%, rgba(10, 10, 12, 0.28) 100%),
+    repeating-linear-gradient(
+      0deg,
+      transparent,
+      transparent 3px,
+      rgba(0, 0, 0, 0.14) 3px,
+      rgba(0, 0, 0, 0.14) 4px
+    );
+}
+
+/* Right column */
+.hero-main {
+  position: relative;
+  z-index: 1;
+  padding: calc(var(--nav-height) + 20px) 5% 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background:
+    radial-gradient(ellipse at 80% 10%, rgba(255, 42, 58, 0.08), transparent 45%),
+    var(--bg);
 }
 
 .hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 660px;
+  max-width: 620px;
 }
 
-/* "// hello world" greeting line */
-.hero-greeting {
-  font-family: var(--font-mono);
-  font-size: clamp(0.78rem, 1.8vw, 0.9rem);
+.hero-welcome {
+  font-family: var(--font-pixel);
+  font-size: clamp(0.72rem, 1.6vw, 0.95rem);
+  color: var(--text);
+  letter-spacing: 0.04em;
+  line-height: 1.5;
+  text-shadow: 0 0 16px rgba(255, 42, 58, 0.55);
+  margin-bottom: 6px;
+}
+
+.hero-lockup {
+  font-family: var(--font-gothic);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 700;
   color: var(--accent);
-  letter-spacing: 0.18em;
-  margin-bottom: 18px;
-  opacity: 0.85;
+  line-height: 1;
+  margin-bottom: 14px;
+  text-shadow: 0 0 18px rgba(255, 42, 58, 0.45);
 }
 
-/* Main name heading */
 .hero-name {
   font-family: var(--font-body);
-  font-size: clamp(2.8rem, 8.5vw, 5.8rem);
+  font-size: clamp(1.8rem, 4.5vw, 2.6rem);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.15;
   color: var(--text);
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
-/* Name highlighted in accent */
 .hero-name span {
   color: var(--accent);
 }
 
-/* Typewriter line */
 .hero-typewriter {
   font-family: var(--font-mono);
-  font-size: clamp(1rem, 3vw, 1.55rem);
+  font-size: clamp(0.95rem, 2.2vw, 1.25rem);
   color: var(--text);
-  margin-bottom: 26px;
-  min-height: 2.2em;
+  margin-bottom: 16px;
+  min-height: 1.8em;
   display: flex;
   align-items: center;
   gap: 2px;
 }
 
-/* Cycling text rendered by typewriter.js */
 .typewriter-text {
   color: var(--accent2);
 }
 
-/* Blinking caret */
 .cursor {
   display: inline-block;
   width: 2px;
@@ -99,24 +128,158 @@
   50%       { opacity: 0; }
 }
 
-/* One-liner bio */
 .hero-bio {
-  font-size: clamp(0.9rem, 1.8vw, 1.02rem);
+  font-size: clamp(0.88rem, 1.6vw, 0.98rem);
   color: var(--muted);
-  line-height: 1.85;
-  margin-bottom: 42px;
-  max-width: 500px;
+  line-height: 1.8;
+  margin-bottom: 24px;
+  max-width: 520px;
 }
 
-/* CTA button row */
 .hero-cta {
   display: flex;
-  gap: 14px;
+  gap: 12px;
   flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+/* Internship highlight card */
+.ops-card {
+  padding: 18px 20px;
+  margin-bottom: 16px;
+}
+
+.ops-card-label {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--accent2);
+  margin-bottom: 8px;
+}
+
+.ops-card-title {
+  font-family: var(--font-pixel);
+  font-size: 0.62rem;
+  line-height: 1.6;
+  color: var(--text);
+  margin-bottom: 6px;
+}
+
+.ops-card-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--data);
+  letter-spacing: 0.08em;
+  margin-bottom: 12px;
+}
+
+.ops-card-meta span {
+  color: var(--muted);
+  margin-right: 6px;
+}
+
+.ops-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.ops-list li {
+  font-size: 0.82rem;
+  color: var(--text);
+  padding-left: 14px;
+  position: relative;
+  line-height: 1.5;
+}
+
+.ops-list li::before {
+  content: '+';
+  position: absolute;
+  left: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+}
+
+/* Compact stack strip — no fake percentages */
+.stack-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 16px;
+}
+
+.stack-strip span {
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
+  color: var(--data);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: rgba(255, 42, 58, 0.06);
+}
+
+/* Terminal */
+.terminal {
+  font-family: var(--font-mono);
+  background: #08080a;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px 16px;
+  box-shadow: inset 0 0 24px rgba(255, 42, 58, 0.06);
+}
+
+.terminal-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.terminal-bar i {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #3a3a40;
+  display: block;
+}
+
+.terminal-bar i:nth-child(1) { background: #ff2a3a; }
+.terminal-bar i:nth-child(2) { background: #ff6b35; }
+.terminal-bar i:nth-child(3) { background: #8a8580; }
+
+.terminal-prompt {
+  font-size: 0.78rem;
+  color: var(--accent);
+  margin-bottom: 8px;
+}
+
+.terminal-prompt span {
+  color: var(--accent2);
+}
+
+.terminal-out {
+  font-size: 0.78rem;
+  color: var(--steel);
+  line-height: 1.65;
 }
 
 /* ── Mobile ── */
-@media (max-width: 768px) {
+@media (max-width: 860px) {
+  #home {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-rail {
+    min-height: 220px;
+    max-height: 240px;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .hero-main {
+    padding: 32px 7% 56px;
+  }
+
   .hero-cta {
     flex-direction: column;
     align-items: flex-start;
